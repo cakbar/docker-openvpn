@@ -18,7 +18,7 @@ SERV_IP=$(ip -4 -o addr show scope global  | awk '{print $4}' | sed -e 's:/.*::'
 docker run -v $OVPN_DATA:/etc/openvpn --rm $IMG ovpn_genconfig -u udp://$SERV_IP -2
 
 # Ensure reneg-sec 0 in server config when two factor is enabled
-docker run -v $OVPN_DATA:/etc/openvpn --rm $IMG cat /etc/openvpn/openvpn.conf | grep 'reneg-sec 0' || abort 'reneg-sec not set to 0 in server config'
+docker run -v $OVPN_DATA:/etc/openvpn --rm $IMG cat /etc/openvpn/server.conf | grep 'reneg-sec 0' || abort 'reneg-sec not set to 0 in server config'
 
 # nopass is insecure
 docker run -v $OVPN_DATA:/etc/openvpn --rm -it -e "EASYRSA_BATCH=1" -e "EASYRSA_REQ_CN=Travis-CI Test CA" $IMG ovpn_initpki nopass

@@ -42,7 +42,7 @@ Restart=always
 
 # Modify IP6_PREFIX to match network config
 #Environment="IP6_PREFIX=2001:db8::/64"
-#Environment="ARGS=--config openvpn.conf --server-ipv6 2001:db8::/64"
+#Environment="ARGS=--config server.conf --server-ipv6 2001:db8::/64"
 Environment="NAME=ovpn-%i"
 Environment="DATA_VOL=ovpn-data-%i"
 Environment="IMG=kylemanna/openvpn:latest"

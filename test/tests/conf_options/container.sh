@@ -1,7 +1,7 @@
 #!/bin/bash
 
 SERV_IP=$(ip -4 -o addr show scope global  | awk '{print $4}' | sed -e 's:/.*::' | head -n1)
-SERVER_CONF="/etc/openvpn/openvpn.conf"
+SERVER_CONF="/etc/openvpn/server.conf"
 TEST1_OVPN="/etc/openvpn/test1.ovpn"
 
 # Function to fail
@@ -34,7 +34,7 @@ test_not_config() {
 
 
 #
-# Generate openvpn.config file
+# Generate server.config file
 #
 read -d '' MULTILINE_EXTRA_SERVER_CONF << EOF
 management localhost 7505

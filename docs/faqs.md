@@ -1,10 +1,10 @@
 # Frequently Asked Questions
 
-## How do I edit `openvpn.conf`?
+## How do I edit `server.conf`?
 
 Use a Docker image with an editor and connect the volume container:
 
-    docker run -v $OVPN_DATA:/etc/openvpn --rm -it kylemanna/openvpn vi /etc/openvpn/openvpn.conf
+    docker run -v $OVPN_DATA:/etc/openvpn --rm -it kylemanna/openvpn vi /etc/openvpn/server.conf
 
 
 ## Why not keep everything in one image?
@@ -19,7 +19,7 @@ Split tunnels are configurations where only some of the traffic from a client go
 
     ovpn_genconfig -N -d ...
 
-## I need to add some extra configurations to openvpn.conf, How can I do that ?
+## I need to add some extra configurations to server.conf, How can I do that ?
 
 You can pass multiple (**-e**) options to `ovpn_genconfig`. For example, if you need to add _'duplicate-cn'_ and _'topology subnet'_ to the server configuration you could do something like this:
 

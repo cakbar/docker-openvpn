@@ -26,8 +26,8 @@ Random things I do to debug the containers.
         + [ ! -d /etc/openvpn/ccd ]
         + iptables -t nat -A POSTROUTING -s 192.168.254.0/24 -o eth0 -j MASQUERADE
         + iptables -t nat -A POSTROUTING -s 192.168.255.0/24 -o eth0 -j MASQUERADE
-        + conf=/etc/openvpn/openvpn.conf
-        + [ ! -s /etc/openvpn/openvpn.conf ]
+        + conf=/etc/openvpn/server.conf
+        + [ ! -s /etc/openvpn/server.conf ]
         + conf=/etc/openvpn/udp1194.conf
         + openvpn --config /etc/openvpn/udp1194.conf
         Tue Jul  1 06:56:48 2014 OpenVPN 2.3.2 x86_64-pc-linux-gnu [SSL (OpenSSL)] [LZO] [EPOLL] [PKCS11] [eurephia] [MH] [IPv6] built on Mar 17 2014
