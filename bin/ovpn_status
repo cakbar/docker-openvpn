@@ -9,4 +9,4 @@ fi
 
 set -e
 
-tail -F /etc/openvpn/openvpn.log
+tail -F /etc/openvpn/openvpn-status.log
