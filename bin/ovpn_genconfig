@@ -334,8 +334,7 @@ proto $OVPN_PROTO
 # Rely on Docker to do port mapping, internally always 1194
 port 1194
 dev $OVPN_DEVICE$OVPN_DEVICEN
-status ${OPENVPN:-}openvpn.log
-log ${OPENVPN:-}openvpn.log
+status /etc/openvpn-status.log
 
 user nobody
 group nogroup
